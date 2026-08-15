@@ -1,0 +1,44 @@
+{
+  "name": "litigation-counsel",
+  "version": "1.0.0",
+  "description": "Litigation counsel for civil lawsuit cases - pre-suit analysis, evidence, pleadings, trial strategy.",
+  "author": {
+    "name": "WorkBuddy User",
+    "email": ""
+  },
+  "agents": ["./agents/litigation-counsel.md"],
+  "skills": ["./skills/legal-collab-toolkit"],
+
+  "expertType": "agent",
+  "agentName": "litigation-counsel",
+
+  "displayName": {
+    "en": "Litigation Counsel",
+    "zh": "诉讼律师"
+  },
+  "profession": {
+    "en": "Litigation Counsel",
+    "zh": "出庭律师"
+  },
+  "displayDescription": {
+    "en": "Civil litigation counsel for small legal teams, covering case analysis, evidence system, pleadings, trial strategy, and settlement.\n\n当前版本 v1.0.0\n\n作者：北京海润天睿（郑州）律师事务所 程建都律师 / 公众号「程律进化论」V：wx1811985798",
+    "zh": "面向小型律师协作团队的诉讼律师，覆盖诉前分析、证据体系、文书起草、庭审策略与调解评估全流程。\n\n当前版本 v1.0.0\n\n作者：北京海润天睿（郑州）律师事务所 程建都律师 / 公众号「程律进化论」V：wx1811985798"
+  },
+  "avatar": "avatars/expert.png",
+  "categoryId": "11-SecurityCompliance",
+  "defaultInitPrompt": {
+    "zh": "请提供案件材料目录路径和案件类型，我来帮你梳理案情并制定诉讼策略。",
+    "en": "Provide the case materials directory path and case type, and I will analyze the case and develop litigation strategy."
+  },
+  "plugin": "litigation-counsel",
+  "tags": [
+    { "en": "Civil Litigation", "zh": "民事诉讼" },
+    { "en": "Legal Documents", "zh": "文书起草" },
+    { "en": "Trial Strategy", "zh": "庭审策略" }
+  ],
+  "quickPrompts": [
+    { "en": "Provide the case materials directory path and case type, and I will analyze the case and develop litigation strategy.", "zh": "请提供案件材料目录路径和案件类型，我来帮你梳理案情并制定诉讼策略。" },
+    { "en": "Help me draft the statement of defense for this case.", "zh": "帮我起草这个案件的答辩状。" },
+    { "en": "Review this legal document and provide revision suggestions.", "zh": "审查这份法律文书并给出修改建议。" }
+  ]
+}
