@@ -1,43 +1,53 @@
-# litigation-counsel v1.0.0 预览核验记录
+# litigation-counsel v1.0.0 发布候选核验记录
 
-核验日期：2026-08-15
+核验日期：2026-08-16
 
 发布分支：`agent/publish-v1.0.0-preview`
 
+状态：`READY_FOR_HUMAN_MERGE_REVIEW`
+
 ## 发布范围
 
-本仓库仅承载 `litigation-counsel` 专家本体：
+本仓库仅承载 `litigation-counsel` 专家及发布审计记录：
 
 - `.codebuddy-plugin/plugin.json`
 - `agents/litigation-counsel.md`
+- `skills/litigation-case-workflow`
 - `skills/legal-collab-toolkit`
 - `avatars/expert.png`
 - `README.md`
+- `CHANGELOG.md`
+- `.github/reviews/`
 
-本仓库不包含客户材料、案件原件、密钥、备份目录或内部审计运行记录。
+本仓库不包含客户材料、案件原件、密钥、备份目录或真实案件运行记录。
 
-## 机械校验
+## 已闭合的预览问题
 
-- WorkBuddy `expert-manager` v0.1.0 基础结构校验通过。
-- 警告为 `displayDescription.zh` 长度 112 字，超过建议的 40 至 50 字。
-- plugin 清单为有效 JSON。
-- 头像为 512 x 512 PNG。
-- 未发现软链接、可执行文件、API Key、Token、密码、真实案号或客户材料。
-- 公开联系方式为 `wx1811985798`。
+- README 的 5 处占位内容已全部替换。
+- `legal-collab-toolkit` 声明的两个 references 已随包提供。
+- Agent 不再引用未打包的外部 Skill；两个运行 Skill 均在 plugin 清单中声明。
+- 数据边界已升级为绿色、黄色、红色、红线四类链路准入规则。
+- 已补齐 CHANGELOG、正式版本说明、机械校验与独立复核记录。
+- 作者信息已由通用占位更新为程建都。
+- `displayDescription.zh` 已缩短为 48 字，处于校验器建议的 40 至 50 字区间。
+- 固定期限表述已移除，改用正式程序文书、送达证据、现行官方法源和双人复算。
 
-## 待闭合问题
+## 校验结论
 
-- README 仍有 5 处 `[TODO]` 占位。
-- `skills/legal-collab-toolkit/SKILL.md` 声明的两个 references 尚未随包提供。
-- Agent frontmatter 引用了外部 `ai-legal-case-workflow`，但该 Skill 未随包提供，也未在 plugin 清单中声明依赖。
-- 数据安全章节仍采用“红级仅本地处理”的旧口径，需要升级为绿色、黄色、红色、红线四类链路准入规则。
-- 缺少独立 CHANGELOG、完整复核回执和正式版本更新说明。
-- `author.name` 仍为通用占位 `WorkBuddy User`，公开前应确认是否改为真实作者名。
+- WorkBuddy 当前内置 `validate_expert.py` 对完整目录树校验通过，无错误、无警告。
+- 当前内置 `register_expert.py` 已在 `/private/tmp` 独立配置目录注册成功，未修改真实 WorkBuddy 市场。
+- plugin 清单为有效 JSON；Agent、Skill 和 references 路径均可解析。
+- 两个 Skill 的 frontmatter 完整，Skill 主文件均少于 500 行。
+- 头像为 512 × 512 PNG。
+- 未发现包内软链接、可执行文件、密钥、Token、密码、真实案号或客户材料。
+- Claude CLI 独立复核使用 `claude-opus-5`、`max effort`、只读工具集，结论为 `PASS_WITH_NOTES`；其 P1 已闭合，P2 已逐项处理或确认不纳入发布包。
+
+详细证据见 `.github/reviews/`。
 
 ## 发布闸门
 
 - Private 仓库与 Draft PR：已允许。
-- 当前仅为预览候选，不得宣称正式放行。
-- 合并至 `main`：等待上述问题整改和 Jack 审阅。
+- 合并至 `main`：等待 Jack 单独审阅与明确授权。
 - 改为 Public：等待 Jack 单独明确授权。
 - 创建 `v1.0.0` 标签和 GitHub Release：暂不执行。
+- 删除发布分支：暂不执行，保留回退与审计路径。

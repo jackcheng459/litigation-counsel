@@ -1,13 +1,15 @@
 {
   "name": "litigation-counsel",
   "version": "1.0.0",
-  "description": "Litigation counsel for civil lawsuit cases - pre-suit analysis, evidence, pleadings, trial strategy.",
+  "description": "Lawyer-controlled civil and commercial litigation workflow for case analysis, evidence mapping, pleadings, hearings, settlement, and review-pending workpapers.",
   "author": {
-    "name": "WorkBuddy User",
-    "email": ""
+    "name": "程建都"
   },
   "agents": ["./agents/litigation-counsel.md"],
-  "skills": ["./skills/legal-collab-toolkit"],
+  "skills": [
+    "./skills/litigation-case-workflow",
+    "./skills/legal-collab-toolkit"
+  ],
 
   "expertType": "agent",
   "agentName": "litigation-counsel",
@@ -18,17 +20,17 @@
   },
   "profession": {
     "en": "Litigation Counsel",
-    "zh": "出庭律师"
+    "zh": "诉讼律师"
   },
   "displayDescription": {
-    "en": "Civil litigation counsel for small legal teams, covering case analysis, evidence system, pleadings, trial strategy, and settlement.\n\n当前版本 v1.0.0\n\n作者：北京海润天睿（郑州）律师事务所 程建都律师 / 公众号「程律进化论」V：wx1811985798",
-    "zh": "面向小型律师协作团队的诉讼律师，覆盖诉前分析、证据体系、文书起草、庭审策略与调解评估全流程。\n\n当前版本 v1.0.0\n\n作者：北京海润天睿（郑州）律师事务所 程建都律师 / 公众号「程律进化论」V：wx1811985798"
+    "en": "Civil and commercial litigation counsel for small legal teams, covering case analysis, evidence, pleadings, hearings, settlement, and lawyer review.",
+    "zh": "面向小型律师协作团队，贯通案情分析、证据体系、文书起草、庭审策略与调解评估，生成待律师复核底稿。"
   },
   "avatar": "avatars/expert.png",
-  "categoryId": "11-SecurityCompliance",
+  "categoryId": "12-IndustryConsultant",
   "defaultInitPrompt": {
-    "zh": "请提供案件材料目录路径和案件类型，我来帮你梳理案情并制定诉讼策略。",
-    "en": "Provide the case materials directory path and case type, and I will analyze the case and develop litigation strategy."
+    "zh": "请提供本轮已授权的案件材料或文字，并说明程序阶段和你希望完成的任务。请先区分原件可支持的事实、当事人陈述、待核事项和证据缺口，再形成待律师复核的争点与策略草案。",
+    "en": "Provide the case materials or text authorized for this task, the current procedural stage, and the requested deliverable. First separate facts supported by source materials, client statements, matters to verify, and evidence gaps, then prepare issues and strategy for lawyer review."
   },
   "plugin": "litigation-counsel",
   "tags": [
@@ -37,8 +39,8 @@
     { "en": "Trial Strategy", "zh": "庭审策略" }
   ],
   "quickPrompts": [
-    { "en": "Provide the case materials directory path and case type, and I will analyze the case and develop litigation strategy.", "zh": "请提供案件材料目录路径和案件类型，我来帮你梳理案情并制定诉讼策略。" },
-    { "en": "Help me draft the statement of defense for this case.", "zh": "帮我起草这个案件的答辩状。" },
-    { "en": "Review this legal document and provide revision suggestions.", "zh": "审查这份法律文书并给出修改建议。" }
+    { "en": "Provide the case materials or text authorized for this task, the current procedural stage, and the requested deliverable. First separate facts supported by source materials, client statements, matters to verify, and evidence gaps, then prepare issues and strategy for lawyer review.", "zh": "请提供本轮已授权的案件材料或文字，并说明程序阶段和你希望完成的任务。请先区分原件可支持的事实、当事人陈述、待核事项和证据缺口，再形成待律师复核的争点与策略草案。" },
+    { "en": "Draft a statement of defense from the authorized materials. Build a claim-element-evidence-response matrix first, flag every unsupported fact and unverified source, and keep the document pending lawyer review.", "zh": "请基于本轮已授权材料起草答辩状。先形成请求、要件、证据和回应矩阵，对缺少证据的事实和未核验法源显著标记，文书保持待律师复核状态。" },
+    { "en": "Review this litigation document against source materials, evidence mapping, current official sources, calculations, procedural requirements, and the opponent's strongest response. Return a separate review report and do not overwrite the source.", "zh": "请根据原始材料、事实证据映射、现行官方法源、计算底稿、程序要求和对方最强反驳审查这份诉讼文书。另行出具审查报告，不覆盖源文件。" }
   ]
 }
